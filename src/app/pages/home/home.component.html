@@ -1,0 +1,38 @@
+<div class="home-container">
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-sub">Est. 1987 · Grand Rapids, MI</p>
+      <h1>Victomort's<br><span class="brand-accent">Pizza Emporium</span></h1>
+      <p class="tagline">3x Best Pizza in Grand Rapids Winner</p>
+      <button mat-raised-button class="order-btn" (click)="goToMenu()">
+        Order Now
+      </button>
+    </div>
+  </section>
+
+  <!-- features -->
+  <section class="features">
+    <h2>Why Victomort's?</h2>
+    <div class="features-grid">
+      @for (feature of features; track feature.title) {
+        <div class="feature-card">
+          <span class="feature-icon">{{ feature.icon }}</span>
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- cta button -->
+  <section class="cta">
+    <h2>Ready to Order?</h2>
+    <p>Browse our full menu and build your perfect pizza.</p>
+    <button mat-raised-button class="order-btn" (click)="goToMenu()">
+      View Menu
+    </button>
+  </section>
+
+</div>

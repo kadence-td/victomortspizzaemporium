@@ -1,0 +1,73 @@
+<div class="checkout-container">
+  <h1>Checkout</h1>
+  <div class="checkout-layout">
+    <mat-card class="checkout-form">
+      <mat-card-header>
+        <mat-card-title>Delivery Details</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field appearance="outline">
+          <mat-label>Phone Number</mat-label>
+          <input matInput [(ngModel)]="formData.phone" (blur)="onPhoneBlur()" placeholder="555-555-5555" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Full Name</mat-label>
+          <input matInput [(ngModel)]="formData.displayName" />
+        </mat-form-field>
+
+        @if (existingProfile && existingProfile.addresses.length > 0) {
+          <mat-form-field appearance="outline">
+            <mat-label>Use Saved Address</mat-label>
+            <mat-select [(ngModel)]="formData.selectedAddressId" (ngModelChange)="onSelectSavedAddress()">
+              <mat-option value="">Enter new address</mat-option>
+              @for (addr of existingProfile.addresses; track addr.id) {
+                <mat-option [value]="addr.id">
+                  {{ addr.label ? addr.label + ' — ' : '' }}{{ addr.street }}, {{ addr.city }}
+                </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        }
+
+        <mat-form-field appearance="outline">
+          <mat-label>Street Address</mat-label>
+          <input matInput [(ngModel)]="formData.street" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>City</mat-label>
+          <input matInput [(ngModel)]="formData.city" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>State</mat-label>
+          <input matInput [(ngModel)]="formData.state" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Zip Code</mat-label>
+          <input matInput [(ngModel)]="formData.zip" />
+        </mat-form-field>
+
+        <mat-checkbox [(ngModel)]="saveAddress">Save this address to my profile</mat-checkbox>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="checkout-sidebar">
+      <app-order-summary [items]="items" />
+      <button mat-raised-button color="primary" class="place-order-btn"
+        [disabled]="isPlacingOrder || items.length === 0"
+        (click)="placeOrder()">
+        @if (isPlacingOrder) {
+          Placing Order...
+        } @else {
+          Place Order
+        }
+      </button>
+      @if (items.length === 0) {
+        <p class="empty-warning">Your cart is empty!</p>
+      }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="menu-container">
+  <h1>Our Menu</h1>
+  <app-spinner [isLoading]="isLoading" />
+  <app-pizza-list [pizzas]="pizzas" (addToCart)="onAddToCart($event)" />
+</div>

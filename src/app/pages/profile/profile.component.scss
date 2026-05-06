@@ -1,0 +1,54 @@
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #f0e6d3;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 2px;
+      background: #c9a84c;
+      margin: 16px 0 32px;
+    }
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 32px 0 16px;
+    color: #c9a84c;
+  }
+}
+
+.lookup-card, .info-card, .add-address-card {
+  margin-bottom: 24px;
+
+  p {
+    color: #f0e6d3;
+    margin-bottom: 8px;
+  }
+}
+
+.edit-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.no-data {
+  color: #888;
+  font-style: italic;
+}
+
+.addresses-section {
+  margin-top: 8px;
+}

@@ -1,0 +1,70 @@
+.checkout-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #f0e6d3;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 2px;
+      background: #c9a84c;
+      margin: 16px 0 32px;
+    }
+  }
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.checkout-form {
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  mat-checkbox {
+    margin-top: 8px;
+    color: #f0e6d3;
+  }
+}
+
+.checkout-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.place-order-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #c9a84c !important;
+  color: #1a1a1a !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+}
+
+.empty-warning {
+  color: #c0392b;
+  text-align: center;
+  font-style: italic;
+}
+
+.mdc-form-field > label {
+  color: #f0e6d3 !important;
+}

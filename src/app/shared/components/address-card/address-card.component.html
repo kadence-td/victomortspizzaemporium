@@ -1,0 +1,16 @@
+<mat-card class="address-card">
+  <mat-card-content>
+    <div class="address-row">
+      <div>
+        @if (address.label) {
+          <p class="label">{{ address.label }}</p>
+        }
+        <p>{{ address.street }}</p>
+        <p>{{ address.city }}, {{ address.state }} {{ address.zip }}</p>
+      </div>
+      <button mat-icon-button color="warn" (click)="deleteAddress.emit(address.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

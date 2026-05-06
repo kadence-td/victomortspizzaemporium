@@ -1,0 +1,79 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #c9a84c;
+  letter-spacing: 1px;
+}
+
+// desktop links
+.desktop-links {
+  display: flex;
+  align-items: center;
+
+  a {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #f0e6d3 !important;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+
+    &:hover, &.active-link {
+      opacity: 1;
+      color: #c9a84c !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+// mobile actions
+.mobile-actions {
+  display: none;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
+// mobile menu
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+  padding: 8px 0;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  a {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: #f0e6d3 !important;
+    padding: 12px 24px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+    text-align: left;
+
+    &:hover, &.active-link {
+      opacity: 1;
+      color: #c9a84c !important;
+      background-color: #242424;
+    }
+  }
+}

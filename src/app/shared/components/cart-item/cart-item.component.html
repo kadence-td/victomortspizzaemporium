@@ -1,0 +1,19 @@
+<div class="cart-item">
+  <div class="item-info">
+    <h3>{{ item.pizza.name }}</h3>
+    <p>{{ item.size | titlecase }} · {{ item.crust | titlecase }} crust</p>
+    <p class="item-price">${{ (item.pizza.prices[item.size] * item.quantity).toFixed(2) }}</p>
+  </div>
+  <div class="item-controls">
+    <button mat-icon-button (click)="decrement()">
+      <mat-icon>remove</mat-icon>
+    </button>
+    <span class="quantity">{{ item.quantity }}</span>
+    <button mat-icon-button (click)="increment()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-icon-button color="warn" (click)="removeItem.emit()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

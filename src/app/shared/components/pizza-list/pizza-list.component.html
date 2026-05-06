@@ -1,0 +1,5 @@
+<div class="pizza-grid">
+  @for (pizza of pizzas; track pizza.id) {
+    <app-pizza-card [pizza]="pizza" (addToCart)="onAddToCart($event)" />
+  }
+</div>

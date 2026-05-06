@@ -1,0 +1,22 @@
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #f0e6d3;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 2px;
+      background: #c9a84c;
+      margin: 16px 0 32px;
+    }
+  }
+}

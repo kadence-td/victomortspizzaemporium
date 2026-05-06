@@ -1,0 +1,41 @@
+<mat-toolbar>
+  <span class="brand" routerLink="/">Victomort's Pizza</span>
+  <span class="spacer"></span>
+
+  <!-- desktop links -->
+  <div class="desktop-links">
+    <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a mat-button routerLink="/menu" routerLinkActive="active-link">Menu</a>
+    <a mat-button routerLink="/about" routerLinkActive="active-link">About</a>
+    <a mat-button routerLink="/profile" routerLinkActive="active-link">Profile</a>
+    <a mat-button routerLink="/cart" routerLinkActive="active-link">
+      <mat-icon aria-hidden="false" [matBadge]="cartCount$ | async" matBadgeColor="warn"
+        [matBadgeHidden]="(cartCount$ | async) === 0">shopping_cart
+      </mat-icon>
+    </a>
+  </div>
+
+  <!-- mobile cart & hamburger menu-->
+  <div class="mobile-actions">
+    <a mat-icon-button routerLink="/cart">
+      <mat-icon [matBadge]="cartCount$ | async" matBadgeColor="warn"
+        [matBadgeHidden]="(cartCount$ | async) === 0">
+        shopping_cart
+      </mat-icon>
+    </a>
+    <button mat-icon-button (click)="toggleMenu()">
+      <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<!-- mobile menu-->
+@if (menuOpen) {
+  <div class="mobile-menu">
+    <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Home</a>
+    <a mat-button routerLink="/menu" routerLinkActive="active-link" (click)="closeMenu()">Menu</a>
+    <a mat-button routerLink="/about" routerLinkActive="active-link" (click)="closeMenu()">About</a>
+    <a mat-button routerLink="/profile" routerLinkActive="active-link" (click)="closeMenu()">Profile</a>
+    <a mat-button routerLink="/cart" routerLinkActive="active-link" (click)="closeMenu()">Cart</a>
+  </div>
+}

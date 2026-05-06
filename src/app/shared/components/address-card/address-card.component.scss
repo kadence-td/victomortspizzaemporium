@@ -1,0 +1,21 @@
+.address-card {
+  margin-bottom: 12px;
+
+  .address-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      margin: 2px 0;
+      font-size: 0.95rem;
+      color: #f0e6d3;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #c9a84c;
+      font-family: 'Playfair Display', serif;
+    }
+  }
+}
