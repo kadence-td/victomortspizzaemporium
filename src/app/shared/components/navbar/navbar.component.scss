@@ -25,7 +25,8 @@
     opacity: 0.8;
     transition: opacity 0.2s ease;
 
-    &:hover, &.active-link {
+    &:hover,
+    &.active-link {
       opacity: 1;
       color: #c9a84c !important;
     }
@@ -70,7 +71,8 @@
     transition: opacity 0.2s ease, background-color 0.2s ease;
     text-align: left;
 
-    &:hover, &.active-link {
+    &:hover,
+    &.active-link {
       opacity: 1;
       color: #c9a84c !important;
       background-color: #242424;

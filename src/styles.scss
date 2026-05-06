@@ -2,16 +2,13 @@
 
 @include mat.core();
 
-$dark-theme: mat.define-theme((
-  color: (
-    theme-type: dark,
-    primary: mat.$yellow-palette,
-  ),
-  typography: (
-    brand-family: 'Playfair Display, serif',
-    plain-family: 'Lato, sans-serif',
-  ),
-));
+$dark-theme: mat.define-theme((color: (theme-type: dark,
+        primary: mat.$yellow-palette,
+      ),
+      typography: (brand-family: 'Playfair Display, serif',
+        plain-family: 'Lato, sans-serif',
+      ),
+    ));
 
 html {
   @include mat.all-component-themes($dark-theme);
@@ -29,7 +26,9 @@ body {
   color: #f0e6d3;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Playfair Display', serif;
 }
 

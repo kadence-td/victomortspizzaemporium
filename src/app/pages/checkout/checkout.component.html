@@ -17,17 +17,17 @@
         </mat-form-field>
 
         @if (existingProfile && existingProfile.addresses.length > 0) {
-          <mat-form-field appearance="outline">
-            <mat-label>Use Saved Address</mat-label>
-            <mat-select [(ngModel)]="formData.selectedAddressId" (ngModelChange)="onSelectSavedAddress()">
-              <mat-option value="">Enter new address</mat-option>
-              @for (addr of existingProfile.addresses; track addr.id) {
-                <mat-option [value]="addr.id">
-                  {{ addr.label ? addr.label + ' — ' : '' }}{{ addr.street }}, {{ addr.city }}
-                </mat-option>
-              }
-            </mat-select>
-          </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Use Saved Address</mat-label>
+          <mat-select [(ngModel)]="formData.selectedAddressId" (ngModelChange)="onSelectSavedAddress()">
+            <mat-option value="">Enter new address</mat-option>
+            @for (addr of existingProfile.addresses; track addr.id) {
+            <mat-option [value]="addr.id">
+              {{ addr.label ? addr.label + ' — ' : '' }}{{ addr.street }}, {{ addr.city }}
+            </mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
         }
 
         <mat-form-field appearance="outline">
@@ -57,16 +57,15 @@
     <div class="checkout-sidebar">
       <app-order-summary [items]="items" />
       <button mat-raised-button color="primary" class="place-order-btn"
-        [disabled]="isPlacingOrder || items.length === 0"
-        (click)="placeOrder()">
+        [disabled]="isPlacingOrder || items.length === 0" (click)="placeOrder()">
         @if (isPlacingOrder) {
-          Placing Order...
+        Placing Order...
         } @else {
-          Place Order
+        Place Order
         }
       </button>
       @if (items.length === 0) {
-        <p class="empty-warning">Your cart is empty!</p>
+      <p class="empty-warning">Your cart is empty!</p>
       }
     </div>
   </div>

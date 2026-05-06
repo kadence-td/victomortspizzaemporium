@@ -4,7 +4,7 @@ import { UserProfile, Address } from '../models';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  constructor(private firestore: Firestore) {}
+  constructor(private firestore: Firestore) { }
 
   async getProfile(phoneNumber: string): Promise<UserProfile | null> {
     const ref = doc(this.firestore, 'users', phoneNumber);

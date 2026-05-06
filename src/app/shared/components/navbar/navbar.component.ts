@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
   cartCount$!: Observable<number>;
   menuOpen = false;
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.cartCount$ = this.cartService.cartCount$;

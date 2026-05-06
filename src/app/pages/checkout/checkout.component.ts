@@ -47,7 +47,7 @@ export class CheckoutComponent implements OnInit {
     private snackBar: MatSnackBar,
     private router: Router,
     private firestore: Firestore
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.cartService.cart$.subscribe(items => this.items = items);

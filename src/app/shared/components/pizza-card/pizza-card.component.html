@@ -1,29 +1,29 @@
 <mat-card class="pizza-card">
-    <mat-card-header>
-      <mat-card-title>{{ pizza.name }}</mat-card-title>
-      <mat-card-subtitle>{{ pizza.description }}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <img mat-card-image [src]="pizza.imageUrl" alt="{{ pizza.name }}" />
-      <mat-form-field appearance="outline">
-        <mat-label>Size</mat-label>
-        <mat-select [(ngModel)]="selectedSize">
-          <mat-option value="small">Small</mat-option>
-          <mat-option value="medium">Medium</mat-option>
-          <mat-option value="large">Large</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Crust</mat-label>
-        <mat-select [(ngModel)]="selectedCrust">
-          <mat-option value="original">Original</mat-option>
-          <mat-option value="thin">Thin</mat-option>
-          <mat-option value="stuffed">Stuffed</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <p class="price">${{ computedPrice.toFixed(2) }}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="onAddToCart()">Add to Cart</button>
-    </mat-card-actions>
-  </mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ pizza.name }}</mat-card-title>
+    <mat-card-subtitle>{{ pizza.description }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <img mat-card-image [src]="pizza.imageUrl" alt="{{ pizza.name }}" />
+    <mat-form-field appearance="outline">
+      <mat-label>Size</mat-label>
+      <mat-select [(ngModel)]="selectedSize">
+        <mat-option value="small">Small</mat-option>
+        <mat-option value="medium">Medium</mat-option>
+        <mat-option value="large">Large</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Crust</mat-label>
+      <mat-select [(ngModel)]="selectedCrust">
+        <mat-option value="original">Original</mat-option>
+        <mat-option value="thin">Thin</mat-option>
+        <mat-option value="stuffed">Stuffed</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p class="price">${{ computedPrice.toFixed(2) }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onAddToCart()">Add to Cart</button>
+  </mat-card-actions>
+</mat-card>

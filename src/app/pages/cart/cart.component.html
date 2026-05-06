@@ -1,11 +1,16 @@
 <div class="cart-container">
   <h1>Your Cart</h1>
+
+  <!-- empty cart message -->
   @if (items.length === 0) {
     <div class="empty-cart">
       <p>Your cart is empty!</p>
       <button mat-raised-button color="primary" (click)="goToMenu()">Browse Menu</button>
     </div>
-  } @else {
+  } 
+  
+  <!-- cart items and summary -->
+  @else {
     <div class="cart-layout">
       <mat-card class="cart-items">
         @for (item of items; track item.pizza.id) {

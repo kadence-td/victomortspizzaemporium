@@ -10,7 +10,6 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 import { AddressCardComponent } from '../../shared/components/address-card/address-card.component';
 import { UserService } from '../../shared/services/user.service';
 import { UserProfile, Address } from '../../shared/models';
-import { Timestamp } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-profile',
@@ -29,9 +28,9 @@ export class ProfileComponent implements OnInit {
   editData = { displayName: '', phone: '' };
   newAddress: Address = { id: '', street: '', city: '', state: '', zip: '', label: '' };
 
-  constructor(private userService: UserService, private snackBar: MatSnackBar) {}
+  constructor(private userService: UserService, private snackBar: MatSnackBar) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   async loadProfile(): Promise<void> {
     if (!this.lookupPhone) return;

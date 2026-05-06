@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
     private pizzaService: PizzaService,
     private cartService: CartService,
     private cdr: ChangeDetectorRef
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.pizzaService.getPizzas().subscribe(pizzas => {
@@ -33,7 +33,7 @@ export class MenuComponent implements OnInit {
       this.isLoading = false;
       this.cdr.detectChanges();
     });
-}
+  }
 
   onAddToCart(item: CartItem): void {
     this.cartService.addItem(item);

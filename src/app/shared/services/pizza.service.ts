@@ -5,7 +5,7 @@ import { Pizza } from '../models';
 
 @Injectable({ providedIn: 'root' })
 export class PizzaService {
-  constructor(private firestore: Firestore) {}
+  constructor(private firestore: Firestore) { }
 
   getPizzas(): Observable<Pizza[]> {
     const pizzaRef = collection(this.firestore, 'pizzas');
